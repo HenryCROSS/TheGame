@@ -30,6 +30,9 @@ add_cxxflags("-nostdinc++", "-D_HAS_EXCEPTIONS=1", "-D_ITERATOR_DEBUG_LEVEL=0")
 add_linkdirs(sfml_path .. "/lib")
 add_includedirs(sfml_path .. "/include")
 
+-- 构建时自动输出compile_commands.json到build文件夹
+add_rules("plugin.compile_commands.autoupdate", {outputdir = "build"})
+
 -- 定义目标
 target("Game")
 do
